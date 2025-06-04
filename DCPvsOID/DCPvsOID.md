@@ -71,17 +71,18 @@ The issuance, presentation and verification of decentralized claims requires a p
 *Figure 1 Issuer-Holder-Verifier Model*
 
 ### Consent and Trust
-- __Consent:__ Organizations must approve the release of their credentials. This is managed through predefined policies.
-- __Trust Relationships:__ Trust is established through secure lists of trusted issuers and participating organizations (participants), maintained by the Dataspace Governance Authority (DSGA).
+- __Trust__: The willingness of a participant (= the trustor) to engage in a risky behavior that stems from their vulnerability to the behavior of another participant (= the trustee).
+- __Consent:__ Participants must approve or allow the exchange of their verifiable credentials. This is managed through their predefined policies and the policies from the Dataspace Governance Authority (DSGA)
+- __Trust Relationships:__ Trust relationship is established through secure lists of trusted policies, claims and evidences credential issuers, maintained by the Dataspace Governance Authority (DSGA).
 ### Decentralization
-- Each participant manages their own identity tokens and credentials.
-- Multiple trust anchors (Credential Issuers) can exist within a dataspace, providing flexibility and resilience.
+- Each participant manages their own credentials.
+- Multiple trusted credential issuers, also called trust anchors, can be approved and maintained within a dataspace by the DSGA, providing flexibility and resilience.
 ### Base Protocols
-- __Verifiable Presentation Protocol:__ Defines how credentials are stored and presented.
-- __Credential Issuance Protocol:__ Defines how credentials are requested and issued.
+- __Verifiable Presentation Protocol:__ Defines how verifiable credentials are stored and presented via verifiable presentations
+- __Credential Issuance Protocol:__ Defines how verifiable credentials are requested and issued.
 ### Security Measures
-- All participants must communicate securely via HTTPS.
-- Credentials and presentations must be tamper-proof and support revocation.
+- All credentials exchanges must be done over secure communication channel, like HTTPS.
+- Verifiable Credentials and Verifiable Presentations must be tamper-proof and support revocation.
 ### Profiles
 - Different profiles define specific ways to handle credentials, revocation, and proof mechanisms to ensure interoperability.
 
