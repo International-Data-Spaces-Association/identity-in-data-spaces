@@ -26,30 +26,30 @@ The Digital Product Passport (DPP)  is a digital record that contains essential 
 The European Commission has mandated DPPs under the framework of the Ecodesign for Sustainable Products Regulation (ESPR). This regulation, adopted as part of the European Green Deal, aims to ensure products are designed with sustainability in mind and include data that supports their reuse, recycling, and responsible disposal. The implementation of DPPs will become mandatory for certain product categories starting in 2027, with a phased rollout across industries.
 
 
-## How Decentralized Identities and Verifiable Credentials enable the creation of trustworthiness in dataspaces
+## How Decentralized Identifiers and Verifiable Credentials enable the creation of trustworthiness in dataspaces
 
 ### Scenario
 Two parties, a component manufacturer (Company A) and a systems integrator (Company B), are collaborating within Manufacturing-X to share data regarding a digital product passport for a machine component. The DPP must include detailed information about the component’s materials, environmental impact, and compliance with safety standards.
 
-### Step 1: Establishing Decentralized Identities
-Decentralized identities form the backbone of trust in this ecosystem. Company A and Company B, each possess their own decentralized identifiers (DIDs), which are unique representations of their identities within the dataspace. These DIDs are coupled with verifiable credentials issued by trusted entities, such as regulatory authorities or certification bodies.
+### Step 1: Establishing Decentralized Identifiers
+Decentralized identifiers for policies, claims and evidence for the participating entities, materials, products, production site, ... form the backbone of trust in this ecosystem. Company A and Company B, each possess their own decentralized identifiers (DIDs), which are representations of their unique identities within the dataspace. These DIDs are coupled with verifiable credentials issued by trusted entities, such as regulatory authorities or certification bodies.
 
-For example, Company A might possess credentials verifying its compliance with ISO 14001 environmental management standards, while Company B holds credentials confirming its adherence to industry specific safety protocols.
+For example, using the Eclipse Conformity Assessment Profile, Company A might possess credentials verifying its compliance with ISO 14001 environmental management standards, while Company B holds credentials confirming its adherence to industry specific safety protocols.
 
 ### Step 2: Exchanging Verifiable Credentials
-To share data related to the DPP, the two companies exchange claims supported by their verifiable credentials. Using a protocol such as the Eclipse DCP, Company A can present claims that demonstrate the environmental sustainability of its production processes without exposing sensitive proprietary data. Similarly, Company B can substantiate its claims regarding safety compliance in a secure, cryptographic manner.
+To share data related to the DPP, the two companies exchange claims and evidence supported by their verifiable credentials. Using a protocol such as DCP and OID4VC, Company A can present a verifiable credentials which contains one of more claims and evidences that demonstrate the environmental sustainability of its production processes. Similarly, Company B can substantiate its claims and evidences regarding safety compliance in a secure, cryptographic manner.
 
-### Step 3: Verifying Claims Against Policies
-Upon receiving the claims, each company verifies them against the established policies within their dataspace and/or data sharing contract respectively. These policies ensure participants meet the shared governance standards of the dataspace. For instance, the claims regarding the environmental impact of the component are checked against ESPR requirements, while industrial safety claims are validated against industry regulations.
+### Step 3: Verifying Claims and Evidence Against Policies
+Upon receiving the claims and evidence, each company verifies them against the established policies within their dataspace and/or data sharing contract respectively. These policies ensure participants meet the shared governance standards of the dataspace. For instance, the claims and evidence regarding the environmental impact of the component are checked against ESPR requirements, while industrial safety claims are validated against industry regulations.
 
 ### Step 4: Establishing Trust for Data Sharing
-With claims successfully validated, mutual trust is established. Company A agrees to share the detailed DPP data with Company B, knowing it will be used responsibly and in compliance with the dataspace’s policies and according to the policies in the data sharing contract. Company B, in turn, ensures it maintains the integrity and confidentiality of the data while integrating it into broader systems for traceability and lifecycle management, as mandated by the usage policies of the data sharing contract.
+With claims and evidence successfully validated, mutual trust is established. Company A agrees to share the detailed DPP data with Company B, knowing it will be used responsibly and in compliance with the dataspace’s policies and according to the policies in the data sharing contract. Company B, in turn, ensures it maintains the integrity and confidentiality of the data while integrating it into broader systems for traceability and lifecycle management, as mandated by the usage policies of the data sharing contract.
 
 ### Step 5: Dynamic Adaptation
-As participants (e.g. through M&A activities) and policies evolve or new participants join the dataspace and additional data sharing contracts are being offered, the reconciliation of claims continues dynamically. This iterative approach ensures trust is maintained even as the dataspace grows or adopts new regulatory requirements.
+As participants (e.g. through M&A activities) and policies evolve or new participants join the dataspace and additional data sharing contracts are being offered, the reconciliation of claims and evidence continues dynamically. This iterative approach ensures trust is maintained even as the dataspace grows or adopts new regulatory requirements.
 
 ### Use case conclusion
-In the context of Manufacturing-X, decentralized identities and verifiable credentials empower organizations like Company A and Company B to exchange data securely and transparently. By leveraging protocols such as the Eclipse DCP, these entities not only adhere to the requirements of the Digital Product Passport but also foster a collaborative environment rooted in trust and compliance. As Europe moves toward the mandatory implementation of DPPs under the ESPR, such technologies will play a crucial role in realizing the vision of Manufacturing-X.
+In the context of Manufacturing-X, decentralized identifiers and verifiable credentials empower organizations like Company A and Company B to exchange data securely and transparently. By leveraging protocols such as DCP and OID4VC, these entities not only adhere to the requirements of the Digital Product Passport but also foster a collaborative environment rooted in trust and compliance. As Europe moves toward the mandatory implementation of DPPs under the ESPR, such technologies will play a crucial role in realizing the vision of Manufacturing-X.
 
 ## Introduction to Decentralized Claims in Dataspaces
 The issuance, presentation and verification of decentralized claims requires a protocol for securely sharing decentralized identities and credentials. It helps ensure that data access is secure by verifying identities and credentials without relying on a central authority.
