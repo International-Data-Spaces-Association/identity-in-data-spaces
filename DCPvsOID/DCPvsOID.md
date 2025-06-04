@@ -51,20 +51,24 @@ As participants (e.g. through M&A activities) and policies evolve or new partici
 ### Use case conclusion
 In the context of Manufacturing-X, decentralized identities and verifiable credentials empower organizations like Company A and Company B to exchange data securely and transparently. By leveraging protocols such as the Eclipse DCP, these entities not only adhere to the requirements of the Digital Product Passport but also foster a collaborative environment rooted in trust and compliance. As Europe moves toward the mandatory implementation of DPPs under the ESPR, such technologies will play a crucial role in realizing the vision of Manufacturing-X.
 
-## Introduction to Decentralized Claims in Dataspaces
-The issuance, presentation and verification of decentralized claims requires a protocol for securely sharing decentralized identities and credentials. It helps ensure that data access is secure by verifying identities and credentials without relying on a central authority.
+## Introduction to Verifiable Credentials in Dataspaces
+The issuance, presentation and verification of verifiable credentials requires a protocol for securely sharing policies, claims and evidence.
+It helps ensure that information is traceable and tamper-proof.
+The additional use of decentralised identifiers to identify verifiable credentials, policies, claims and evidence helps ensure that data access is secure by verifying identities and credentials without relying on a central authority.
+
+A decentralised identifier is characterised by both a technical implementation - how to resolve it, how to authenticate it, how to store it - and a governance - who can issue it, who can revoke, ban or delete it.
 
 ### Key Concepts and Terms
-- __Dataspace:__ A governance framework and supporting services to build trustworthiness and enable data sharing through an agreed set of policies and procedures.
-- __Participant:__ An organization, which is a member of the dataspace, i.e. obliged to comply to the common governance framework.
-- __Credential Issuer:__ An entity that provides verifiable credentials to participants.
-- __Verifier:__ An entity that checks the validity of the credentials presented by participants.
-- __Self-Issued ID Tokens:__ Tokens created and signed by participants themselves to prove their identity.
-- __Wallet:__ a store for Verifiable Credentials
+- __Dataspace:__ Interoperable framework, based on common governance principles, standards, practices and enabling services, that enables trusted data transactions between participants. (DSSC v2)
+- __Participant:__ A natural person or a legal person committed to the governance framework of a particular data space and having a set of rights and obligations stemming from this framework. (DSSC v2)
+- __Credential Issuer:__ A role an entity can perform by asserting claims about one or more subjects, creating a verifiable credential from these claims, and transmitting the verifiable credential to a holder. (W3C VC)
+- __Verifier:__ A role an entity performs by receiving one or more verifiable credentials, optionally inside a verifiable presentation for processing. (W3C VC)
+- __Self-Issued ID Tokens:__ A verifiable credential where the issuer is also the subject.
+- __Wallet:__ a type of [credential repository](https://www.w3.org/TR/vc-data-model-2.0/#dfn-credential-repositories) to store Verifiable Credentials.
 
 ### Fundamentals
-1.	Issuing Credentials: A Credential Issuer provides verifiable credentials to an organization. These credentials can be used to prove the organization's identity and access rights.
-2.	Presenting Credentials: The organization presents these credentials to a Verifier when providing claims to another party. The Verifier checks the credentials' validity using a decentralized registry.
+1.	Issuing Credentials: A Credential Issuer provides verifiable credentials to a participant. These credentials can be used to prove the participant's identity and access rights.
+2.	Presenting Credentials: The participant presents these credentials to a Verifier when providing claims to another participant. The Verifier checks the credentials' validity using a [verifiable data registry](https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-data-registries).
 
 ![Figure 1](Figure1.png)
 
