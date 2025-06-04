@@ -4,14 +4,18 @@ _Areas of application, commonalities and differences, and application in Dataspa
 ## Executive Summary
 
 This document delves into the comparative analysis of the [Eclipse Decentralized Claims Protocol (DCP)](https://projects.eclipse.org/projects/technology.dataspace-dcp)  and the [OpenID4VC Protocol (OID4VC)](https://openid.net/sg/openid4vc/). Both protocols serve essential roles in enabling secure, interoperable, and privacy-preserving data exchanges within digital ecosystems, yet their implementation diverges in meaningful ways. Understanding these contrasts is key to making informed decisions about which protocol to adopt for specific requirements within dataspaces.
-It shows that the Eclipse DCP is the best solution for providing organizational credentials through dataspace connectors.
+In a dataspace, it'll be the responsability of the Dataspace Authority to decide which of the protocol suits better their interoperablity, policy and regulatory compliance requirements.
 
 ## Introduction
-Trust in dataspaces is created through the reconciliation of policies and claims containing evidence which support the required policies — a process that ensures all participating entities align with shared governance principles, operational standards and that access, contract and usage policies of data sharing contracts are met.
+Trust in dataspaces is created through the reconciliation of policies, claims and evidence which support the required policies — a process that ensures all participating entities align with shared governance principles, operational standards and that access, contract and usage policies of data sharing contracts are met.
 
 Policies, which define the rules and expectations within the dataspace, serve as the foundation for establishing trust. Claims, on the other hand, are assertions made by entities about their compliance with these policies or their possession of certain attributes.
+At last, Evidences bring additional information to support one or more claims and facilitate the risk-assessment made by the participating entities.
 
-The reconciliation process begins with verifying claims against established policies. Leveraging decentralized claims protocols such as the Eclipse DCP or credential protocols like OID4VC, facilitate the secure presentation of evidence to substantiate claims. These protocols enable cryptographic assurances, ensuring that claims are tamper-proof and verifiable without exposing sensitive underlying data. By validating these claims in compliance with the dataspace's overarching policies, organizations can confirm their adherence to shared norms, fostering mutual trustworthiness.
+Those policies, claims and evidences can be securely stored using Verifiable Credentials which ensure among other things, traceability and content-integrity.
+There are different types of Verifiable Credentials (W3C VC v1/v2, IETF SD-JWT, ISO mdoc/mDL, AnonCreds, ...) and both DCP and OID4VC can be used to issue and present W3C Verifiable Credentials.
+
+The reconciliation process begins with verifying claims and evidence against established policies. Leveraging credential exchange protocols such as DCP and OID4VC, facilitate the secure presentation of policies, claims and evidence for reconciliation. These protocols enable cryptographic assurances, ensuring that policies, claims and evidences are tamper-proof and verifiable without exposing sensitive underlying data. By validating these claims and evidence in compliance with the dataspace's overarching policies, participating entities can confirm their adherence to shared norms, fostering mutual trustworthiness.
 
 Moreover, this iterative process of reconciliation is dynamic, allowing the dataspace to adapt as policies evolve or as new participants join and new data sharing contracts are being offered. It creates an environment where trust is not a static agreement but an ongoing commitment, harmonized through transparency, accountability, and technological safeguards.
 
