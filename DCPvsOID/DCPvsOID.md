@@ -92,15 +92,15 @@ In the DCP specification the generic Issuer-Holder-Verifier Model is extended an
 
 *Figure 2 DCP Information Flow Architecture*
 
-Within the context of a dataspace, two organizations (participants) need to exchange their identity and claims information to enable the interactions defined in the [Dataspace Protocol (DSP)](https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/). DSP enables the negotiation of data sharing contracts, which contain the policies for which a participant needs to present claims. This is being done through Verifiable Credentials which the holder must present to a verifier.
+Within the context of a dataspace, two organizations (participants) need to exchange verifiable credentials to enable the interactions defined in the [Dataspace Protocol (DSP)](https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/). DSP enables the negotiation of data sharing contracts, which contain the policies for which a participant needs to present claims. This is being done through Verifiable Credentials which the holder must present to a verifier.
 
-The Issuer Service issues credentials to a holder’s credential service. As part of this process the Issuer Service will verify the holder’s decentralized identity (DID) using the Verifiable Data Registry, which is used to resolve the holder’s DID document and cryptographic material.
+The Issuer Service issues verifiable credentials to a holder’s credential service. As part of this process the Issuer Service will verify the acceptance of the holder’s decentralized identifier (DID) using the Verifiable Data Registry.
 
 Every participant in the dataspace needs to run three logical services to be able to act as a holder of verifiable credentials: a Participant Agent, which will include a self-issued ID Token. This token will be obtained from a Secure Token Service (STS) controlled by the holder. The token contains an Access Token, which is bound to the Verifier and will be used to request a Verifiable Presentation. The holder’s Credential Service will verify this token with the STS.
 
-The verifier also operates a Participant Agent that engages with the holder agent. When it receives a request, it will resolve the holder’s DID document from the Verifiable Data Registry and through this resolve the endpoint for the holder’s Credential Service. It will then send a request for a Verifiable Presentation to the Credential Service, which includes the access token received from the holder’s agent. The participant agent will then match the credentials returned in the Verifiable Presentation against the policy constraints associated the original dataspace request.
+The verifier also operates a Participant Agent that engages with the holder agent. When it receives a request, it will resolve the holder’s DID document and through this resolve the endpoint for the holder’s Credential Service. It will then send a request for a Verifiable Presentation to the Credential Service, which includes the access token received from the holder’s agent. The participant agent will then match the credentials returned in the Verifiable Presentation against the policy constraints associated the original dataspace request.
 
-This enables the establishment of consent for the release and access to a protected resource. Since the Dataspace Protocol is built on machine-to-machine message exchange patterns for Software Agents (Dataspace Connectors), end-user consent is not applicable.
+This enables the establishment of consent for the release and access to a protected resource. Since the Dataspace Protocol is agnostic of the message exchange protocol, machine-to-machine message exchange patterns is supported with Software Agents (Dataspace Connectors), end-user consent is not needed.
 
 The first step in the interaction is for an issuer to issue a verifiable credential for a claim to an organization, which in this case is the client asking for the issuance from the issuer entity:
 
@@ -108,9 +108,9 @@ The first step in the interaction is for an issuer to issue a verifiable credent
 
 *Figure 3 Issuance Flow*
 
-This process enables the issuer entity to write a verifiable credential to the credential store of the organization.
+This process enables the issuer entity to issue a verifiable credential to the credential store of the organization.
 
-During the negotiation of a data sharing contract the participant offering the contract will ask the organization which requests the data sharing contract to provide verifiable credentials that contain proof that the policy is being met. Those claims need to be verified with a verifier to know whether they are to be trusted.
+During the negotiation of a data sharing contract the participant offering the contract will ask the organization which requests the data sharing contract to provide verifiable credentials that contain proof that the policy is being met. Those claims and evidence need to be verified with a verifier to know whether they are to be trusted.
 
 An organization asking for the verification of a claim can use the following flow to verify a claim:
 
