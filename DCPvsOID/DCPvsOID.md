@@ -85,6 +85,22 @@ The issuance, presentation and verification of decentralized claims requires a p
 ### Profiles
 - Different profiles define specific ways to handle credentials, revocation, and proof mechanisms to ensure interoperability.
 
+## Characteristics per protocol
+
+| Characteristics                                | DCP                             | OID4VC                          |
+|------------------------------------------------|---------------------------------|---------------------------------|
+| Governance Authority                           | Eclipse Foundation              | OpenID Foundation               |
+| Scope                                          | Verifiable Credential exchanges | Verifiable Credential exchanges |
+| supported VC formats                           | [W3C VCDM v1.1](https://www.w3.org/TR/vc-data-model/) | format agnostic*: [W3C VCDM 1.1](https://www.w3.org/TR/vc-data-model/), [W3C VCDM 2](https://www.w3.org/TR/vc-data-model-2.0/), [IETF SD-JWT VC](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-sd-jwt-vc-09), [ISO mDL](https://www.iso.org/standard/69084.html), [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), ... |
+| Support of decentralised identifiers (W3C DID) | Yes                             | Yes                             |
+| Support of asynchronous VC issuance            | Yes                             | Yes                             |
+| Support of Human-in-the-loop VC issuance       | No                              | Yes                             |
+| Support of Machine-to-Machine VC issuance      | Yes                             | Yes                             |
+| Supported data exchange protocols**            | Eclipse Dataspace protocol (DSP)| Eclipse Dataspace protocol (DSP), TM Forum API, ... |
+
+*: interoperability is achieved via the specification of OID4VC profiles
+**: to be noted that those data exchange protocols are credentials format agnostic and no normative binding between a data exchange protocol and a verifiable credential exchange protocol has been identified.
+
 ## Eclipse Decentralized Claims Protocol (DCP)
 In the DCP specification the generic Issuer-Holder-Verifier Model is extended and mapped to the needs of dataspaces and the organizations participating.
 
