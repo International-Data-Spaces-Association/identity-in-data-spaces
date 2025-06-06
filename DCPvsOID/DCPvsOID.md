@@ -143,14 +143,22 @@ The basic flow of the presentation of a credential to a verifier is best illustr
 
 *Figure 5 OID4VP flow*
 
-## Dataspaces as communities of organizations
-Before delving into the details of the comparison of OpenID Specs and the Eclipse DCP it is important to understand that dataspaces are communities of organizations, not of human actors.
+## Dataspaces in general
 
-While it’s true that many times it will be human end-users requesting to share data, this type of authorization flow happens outside of the dataspace and is part of the application layer of each organization. From there to the actual data sharing contract of a dataspace many different software stacks and processes can interact before it becomes necessary to negotiate a data sharing contract between organizations.
+Dataspaces are designed to enable software agents representing participants to negotiate data sharing contracts and to execute on those. A data sharing contract might represent a one-time data transfer, a continuous stream of data, or a regularly recurring event (e.g. regulatory data sharing obligations). Many of these activities will need to be automated to a degree where thousands of those negotiations and/or contract validations can happen in seconds. Take for example the use case of Manufacturing-X mentioned above: every single part of a car, plane, train, ship or sufficiently complex industrial goods needs to be accompanied by a Digital Product Passport, which needs to be shared throughout the supply chain and can benefit from full end-to-end traceability, keeping human-in-the-loop for consent when required and be fully automated between machine-to-machine otherwise.
 
-Dataspaces are designed to enable software agents representing organizations to negotiate data sharing contracts and to execute on those. A data sharing contract might represent a one-time data transfer, a continuous stream of data, or a regularly recurring event (e.g. regulatory data sharing obligations). Many of these activities will need to be automated to a degree where thousands of those negotiations and/or contract validations can happen in seconds. Take for example the use case of Manufacturing-X mentioned above. If every single part of a car, plane, train, ship or sufficiently complex industrial goods needs to be accompanied by a Digital Product Passport, which needs to be shared throughout the supply chain it will be prohibitively expensive and slow to have each and every sharing contract agreed upon and approved by humans. Especially as the legal entities participating are companies and the human end user requesting the setup of a data sharing contract is at best metadata information to tie the contract negotiation to a legal representative of the organization. However, even in those cases the human end-user doesn’t need to be represented in the data sharing contract as a credentialed identity, as it’s always the organization that is the entity which needs identification and credentials.
+To be noted that in many dataspace such as Health, Finance, Education&Skills, the policy, claims and evidences exchanged using verifiable credentials, can be bound to a human which is not necessarly a legal representative of a organisation.
 
-__Once you add AI scenarios and automated AI agents negotiating data sharing contracts the situation becomes utterly hopeless for any protocol which requires human authorization.__
+Once you add AI scenarios and automated AI agents negotiating data-sharing contracts, it becomes necessary to use a protocol which can support both human-in-the-loop for consent management, rights delegation to create a legally relevant traceable chain of claims and evidences, and machine-to-machine for automatic reconciliation of those claims and evidence with policies.
+
+## IDSA Dataspaces as communities of organizations
+
+Before delving into the details of the comparison of OpenID Specs and the Eclipse DCP it is important to understand that unlike other commonly agreed definition of Data Spaces from, including and not limited to, the Data Spaces Support Center, CEN/CENELEC Trusted Data Transaction, FIWARE, Gaia-X, ..., the IDSA Dataspaces are communities of organizations and are not designed to encompass human actors, natural person nor citizens.
+
+Given that peculiar definition of a dataspace by IDSA, the additional features set provided by OID4VC protocol are superfluous compared to the DCP protocol natively designed for the centralised IDSA Reference Architecture Model.
+As such, a dataspace gouvernance that does not require, rights delegation, consent management, mandate, nor any form of legally relevant claims and evidence traceability, can use DCP.
+
+For other data space governances where end-to-end tracability of policy, claims and evidence are required, either due to policy compliance or regulatory compliance, the OID4VC protocol is better suited.
 
 ### Issues this creates for OID4VC
 The use of decentralized identities and verifiable credentials in highly automated, software agent-based systems like dataspaces raises a couple of questions and issues for the use of OID4VC at this layer of a data ecosystem architecture:
