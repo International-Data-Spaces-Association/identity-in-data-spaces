@@ -121,21 +121,22 @@ An organization asking for the verification of a claim can use the following flo
 Now that the claim was verified, the participant offering the data sharing contract can evaluate the policy and check whether the provided claim sufficiently covers the requirements of the policy to be accepted as proof of conformance.
 
 ## OpenID for Verifiable Credentials (OID4VC)
-Founded in 2007, the OpenID Foundation (OIDF) is a global open standards body committed to helping __people__ assert their identity wherever they choose.
+Founded in 2007, the OpenID Foundation (OIDF) is a global open standards body with the mission to lead the global community in creating identity standards that are secure, interoperable and privacy-preserving.
 
-The OpenID for Verifiable Credentials (OID4VC) protocol specifically focuses on enabling the issuance, presentation, and verification of verifiable credentials as digital proofs of claims. It consists of multiple specifications :
-- OpenID for Verifiable Credential Issuance (OID4VCI)
-- OpenID for Verifiable Presentations (OID4VP)
-- OpenID4VC High Assurance Interoperability Profile (HAIP)
-- Self-Issued OpenID Provider v2 (SIOPv2)
-- OpenID for Verifiable Presentations over BLE
-- OpenID Connect UserInfo Verifiable Credentials
+The OpenID Digital Credentials Protocols (DCP) working group goal is to develop OpenID specifications for the Issuer-Holder-Verifier-Model use-cases to enable issuance and presentations of the Digital Credentials of any format (W3C VCs, IETF SD-JWT VCs, ISO/IEC 18013-5, etc.) and pseudonymous authentication from the End-User to the Verifier.
 
-The [OID4VC Issuance specification](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html) defines an OAuth-protected API for the issuance of Verifiable Credentials. It allows a Credential Issuer to assert End-User claims. Verifiable Credentials can be securely presented for the End-User to the Resource Provider, without involvement of the credential issuer.
+From the DCP working group is developed the OpenID for Verifiable Credential Issuance (OID4VCI) and the OpenID for Verifiable Presentations (OID4VP), commonly refered as OID4VC
 
-It requires an End-User Wallet as the store in which the holder can request, receive, store, present and manage Verifiable Credentials and cryptographic key material.
+The [OID4VC Issuance specification](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html) defines an OAuth-protected API for the issuance of Verifiable Credentials. It allows a Credential Issuer to assert an optional access token, which depending on the type and characteristics of the token can require a human interaction. Verifiable Credentials can be securely presented for the End-User to the Resource Provider, without involvement of the credential issuer.
 
-The [OID4VP specification](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html) defines a mechanism on top of OAuth 2.0 to request and present Verifiable Credentials as Verifiable Presentations. It introduces the VP Token as a container to enable End-Users to present Verifiable Presentations to Verifiers using a Wallet. The specification is an extension of OpenID Connect to allow presentation of claims in the form of W3C Verifiable Credentials  as part of the protocol flow.
+![OID4VCI issuance workflow](https://kroki.lab.gronlier.fr/plantuml/png/bPPjRzem4CVVvrEui1VTYsv0MJkcRMfmI8TKJLMfjDScSS4YiPdjbD9ftttdF3eFK1Oa9Ev-llkVVRvmepIHEeaZvsmhoIecA29xaMYaOge99muyP--MKKBHDzJh3wwkFD_jWMaboJurJJwxb-xKc2AsMklRmkwF_K_-nDX38ZUb-NfyZIVZB0Ab76nW78qzZ8UzF9FFeYYppyQpQP4EuCg1VN_gpT85GePKFj0mJpg0fnHJcY4ynZt7KHl6jqII62dwEw4yeEYFuqefTbX4Gg9fH8ADSyUUw1tZT9h6pZo3zAbSmAsaI7YOkVlknCEUx_orS-H-oQb4mu7jiLBsyyWDvmzAmaF08H7bJZjsBXo996oXvM6rIAjeb1vpa_05rxa_sw-QTisUIA1FobV2LieievrIn5l1AM-7B7gb4xP36h0BgWffrU4HJPP4jRUuRCGkk5u7W1tGaQJtS1LPmBRak7uREs5F5dcdtmAtjUFsFTTy3g6c0wcivBRxS2fUxaaOChv2eq6tmCBVQFzLntd-MZDDtuAw2in0kx1iJ5a85xfsElxClvpw7PL3IJLkP3xss5YJKEnCHKyaKcsvwTh7DGisd2g5XdRLFus8HZqWnFSyc_BXgzrsNTSd8-r6EKXLfsZD24jxeDapq_l3ksrlbIRjEZeRBmMFD78ABCmBw8X_LalHz9h25koLek7e_mhgO8yeBPY3OWhWI3K5uZ4I2txQH6wkQKbitZhD13yfSaNRCSlcw03Vw24S4QLShILR9hervHhSqV6S0WSFZYHQy2HUKkauI_62UZXYSFFGZ8FCVS_PLiEdyFKGKGZNFMwYrqAoLs9AW-ildwbCkSNZeavwSmz9gaHK45u3m9A6a8MH23tGhL1C2xdFSYuSoaC4CdEjSwKI-3FGgJNt6IaieEdwkRKUeullHjmN40EpIca7VXWRDXO5RpH54UD1z06H8333HuiDl87ITVDg6GfAkUVgFTfzhE5v1CTReAyN-RAqT0JROAnvCBCfeGYIs6nzaHvovOlCaUCon3bHUnv0BWaJlfxVkO42uU_dFm00)
+
+
+Verifiable Credentials allow a Credential Issuer to assert policy, claims and evidences. A Verifiable Credential follows a pre-defined schema (the Credential type) and MAY be bound to a certain holder, e.g., through Cryptographic Key Binding. Verifiable Credentials can be securely presented for the End-User to the RP, without involvement of the Credential Issuer.
+
+It requires a Wallet as the store in which the holder can request, receive, store, present and manage Verifiable Credentials and cryptographic key material.
+
+The [OID4VP specification](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html) defines a mechanism on top of OAuth 2.0 to request and present Verifiable Credentials as Verifiable Presentations. It introduces the VP Token as a container to enable the presentation of Verifiable Presentations to Verifiers using a Wallet and Holder Binding Proofs to prevent presentations injection attacks, impersonating and replay attacks.
 
 The basic flow of the presentation of a credential to a verifier is best illustrated with a diagram from the specification:
 
