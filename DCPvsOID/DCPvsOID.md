@@ -152,30 +152,19 @@ Dataspaces are designed to enable software agents representing organizations to 
 
 __Once you add AI scenarios and automated AI agents negotiating data sharing contracts the situation becomes utterly hopeless for any protocol which requires human authorization.__
 
-### Issues this creates for OID4VC
-The use of decentralized identities and verifiable credentials in highly automated, software agent-based systems like dataspaces raises a couple of questions and issues for the use of OID4VC at this layer of a data ecosystem architecture:
-- How is the automatic discovery of a DID going to happen? OpenID does not have a process for this that would not require a user to share this information actively. Any process devised to enable automatic discovery on top of OpenID could potentially lead to either DDOS attacks against the identity store or the leak of existence of data sharing contract offers that the other party isn’t authorized to know.
-- There is no mechanism in OID4VC or OID4VP that would allow for the correlation of contract offers and agreements to determine policies.
-- The Authorization Request Reference with Consent Object would need to be forwarded from the Dataspace Connector to the Wallet, which adds a potential attack vector. This process would need to be standardized so different wallet implementations can be interoperable.
-- Custom Wallet extensions are needed for the comparison of the consent object to the presentation definition.
-- The Authentication Token needs to be bound to specific credentials and Proof of Possession is required, how is the end-user transferring this to the organization on which behalf the contract negotiation is being conducted?
-- How can the connector use the Demonstration of Proof of Possession for the authentication token without the private key of the wallet?
-- The token needs to be correlated with the DSP offer messages to guard against clients using a token to obtain different datasets.
-- How does the connector evaluate policies at this point because it needs the original credentials? E.g.: a policy constraint may require a value in the credential subject. Or a credential claim is required to fetch data.
-
-## DCP to the rescue
-As you can see, there are many unresolved issues in the use of OpenID specifications for dataspaces. Since OpenID never intended their specifications to be used in machine-to-machine scenarios its user centric design isn’t well suited for the control plane of a dataspace. Many customizations would be required that will diverge the dataspaces implementations from the OpenID specifications. Should those specifications evolve in the future this will pose a massive challenge as it might not be possible to reconcile existing customizations with future versions of the OpenID specifications.
-
-So why take the risk and heavily customize a protocol for a novel use if there is the possibility to create a new protocol? One specifically designed to solve the issues faced by organizations in dataspaces and which is being developed under control of the dataspace community in the Eclipse Dataspace Working Group!
-
-DCP is designed to enable machine-to-machine scenarios without human intervention, to enable an ecosystem of highly interoperable dataspaces.
-
-It is built to enable massive scale, support the interaction of automated software agents and to represent the organization and its claims. Should a specific regulation or process require the presence of end user credentials it is always possible to express those as a claim and have DCP provide this claim to the other party. I.e.: the user information could be encoded as it’s own claim, even containing a signature from the user, which provides certainty about that user account having been involved in the creation of this claim.
-
-## Additional considerations about using OpenID
-However, despite the challenges shown above OpenID might still be a valuable addition to dataspaces. Potential enabling services, like validation services for specific Trust Frameworks, or other value add services (Marketplaces, Observers…) might require the authentication of specific human end-users to their service and thus rely on OID4VC and OID4VP to integrate end user credentials in the inherently decentralized architecture of dataspaces.
-
 ## Conclusion
-The Eclipse Decentralized Claims Protocol is best suited for the use of claims issuance, management, presentation and verification at the architectural layer of the dataspace control plane. It has been designed to enable software agents (dataspace connectors) to represent organizations in a decentralized dataspace.
 
-It is the key difference between dataspaces and the use cases for which OID4VC has been designed. In dataspaces, policies vary by data asset and data sharing contract and may evolve over time. OpenID use cases are generally static and typically require one known credential type. Dataspaces provide a mechanism to express what policies are required for a specific data sharing context and for associating those policies with required credentials. Which may change on every data request. OpenID does not address this context.
+Both DCP and OID4VC protocols have the same mission to securely enable the exchange of Verifiable Credentials.
+While both protocols do it slightly differently, it's important to note that both protocols can be used to exchange the same Verifiable Credentials.
+
+This last point alone means that W3C Verifiable Credential exchanged in Manufacturing-X with one protocol can be exchanged with participants outside of Manufacturing-X with another protocol.
+
+To address data transaction regulatory compliance and policy compliance from dataspace authorities, and at the same time meet performance expectation from high-frequency credential exchange, the protocol used to exchange credentials needs to support both human-in-the-loop and machine-to-machine exchange profiles.
+
+That's the reason we see the emergence of multi-protocol agents also called connectors or wallets or credential stores, some with the additional support of previous protocols dedicated to Machine-to-Machine (M2M) like DIDComm.
+This enable a W3C Verifiable Credentials to be first exchanged with OID4VC with or without human interaction and later continue its journey and be exchanged with DCP.
+
+This creates a true end-to-end traceability of the policies, claims and evidence being exchanged with credentials, and preserve the priviledge of the Dataspace Authority to recommend or enforce specific protocols.
+Of course, the downside of this approach is the technical need for the concerned Dataspace Authorities to maintain dual-stack softwares.
+
+Considering the increasing adoption of one of the protocols inside and outside of the dataspace ecosystem, there is a clear expectation from the market for the two protocols DCP and OID4VC to converge, one becoming the recommend M2M profile of the other.
